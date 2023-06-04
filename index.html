@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let scores = [];
+        let totalSum = 0;
+
+        for (let i = 0; i < 3; i++) {
+            let korean = Number(prompt(`${i + 1}번 학생의 국어 점수를 입력하세요: `));
+            let english = Number(prompt(`${i + 1}번 학생의 영어 점수를 입력하세요: `));
+            let math = Number(prompt(`${i + 1}번 학생의 수학 점수를 입력하세요: `));
+            scores.push([korean, english, math]);
+
+            let studentSum = korean + english + math;
+            totalSum += studentSum;
+
+            document.write(`학생 ${i + 1}: 합 -> ${studentSum}, 평균 -> ${studentSum / 3}<br>`);
+        }
+
+        let totalCount = scores.length;
+        let totalAverage = totalSum / (totalCount * 3);
+        document.write(`전체 학생: 합 -> ${totalSum}, 평균 -> ${totalAverage}`);
+    </script>
+</body>
+
+</html>
